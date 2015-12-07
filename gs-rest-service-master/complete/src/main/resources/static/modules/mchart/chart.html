@@ -1,0 +1,16 @@
+{{hello}}
+<hr/>
+<div ng-init="checked=false">
+	<div class="check-element sample-show-hide" ng-show="checked" style="clear:both;">
+		<select ng-model="month.datafilter" ng-options="monthfilter.lookupCode as monthfilter.description for monthfilter in filter_data"></select>
+		<spam>Filter selected: Last {{month.datafilter}} months</spam>
+		<input type="submit" value="Apply" ng-click="abc(month.datafilter)">
+	</div>
+	<label>
+		<input type="checkbox" ng-model="checked" style="float:left; margin-right:10px;"> Filter
+	</label>
+</div>
+<hr/>
+<chart-element></chart-element>
+<hr/>
+

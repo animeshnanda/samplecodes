@@ -1,0 +1,138 @@
+		$scope.swapChartType = function () {
+			if (this.chart.options.chart.type === 'line') {
+				this.chart.options.chart.type = 'column'
+			} else {
+				this.chart.options.chart.type = 'line'
+			}
+		}
+
+		$scope.chart = {
+			options: {
+		
+		/*
+		//
+		
+		$(function () {
+			$('#container').highcharts({
+				data: {
+					table: 'datatable'
+				},
+				chart: {
+					type: 'column'
+				},
+				title: {
+					text: 'Data extracted from a HTML table in the page'
+				},
+				yAxis: {
+					allowDecimals: false,
+					title: {
+						text: 'Units'
+					}
+				},
+				tooltip: {
+					formatter: function () {
+						return '<b>' + this.series.name + '</b><br/>' +
+							this.point.y + ' ' + this.point.name.toLowerCase();
+					}
+				}
+			});
+		});
+		*/
+				chart: {
+					type: 'pie'
+				}
+			},
+			series: [{
+				data: [10, 15, 12, 8, 15]
+			}],
+			title: {
+				text: 'Test Chart'
+			}
+		};
+		var abc = getChartData.getData();
+		console.log(abc);
+		var xyz = myFactory.sayHello();
+		//console.log(xyz);
+		/*
+		//Temporary Json String
+		var tempJson = {"chart": {"type": "column"},
+						"title": {"text": "Monthly Average Rainfall1"},
+						"subtitle": {"text": "Source: WorldClimate.com"},
+						"xAxis": {
+								"categories": "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec",
+								"crosshair": "true"
+						},
+						"yAxis": {
+								"min": "0",
+								"title": {"text": "Rainfall (mm)"}
+						},
+						"tooltip": {
+							"headerFormat": "<span style='font-size:10px'>{point.key}</span><table>",
+							"pointFormat": "<tr><td style='color:{series.color};padding:0'>{series.name}: </td> <td style='padding:0'><b>{point.y:.1f} mm</b></td></tr>",
+							"footerFormat": "</table>",
+							"shared": "true",
+							"useHTML": "true"
+						},
+						"plotOptions": {
+							"column": {
+								"pointPadding": "0.2",	"borderWidth": "0"
+							}
+						},
+							"series": [{
+								"name": "Cuttack",
+								"data": "49.9,71.5,106.4,129.2,144.0,176.0,135.6,148.5,216.4,194.1,95.6,54.4"
+
+							}, {
+								"name": "Bhubaneswar",
+								"data": "83.6,78.8,98.5,93.4,106.0,84.5,105.0,104.3,91.2,83.5,106.6,92.3"
+
+							}, {
+								"name": "Puri",
+								"data": "48.9,38.8,39.3,41.4,47.0,48.3,59.0,59.6,52.4,65.2,59.3,51.2"
+
+							}, {
+								"name": "Raurkela",
+								"data": "42.4,33.2,34.5,39.7,52.6,75.5,57.4,60.4,47.6,39.1,46.8,51.1"
+
+							}, {
+								"name": "Angul",
+								"data": "42.4,33.2,34.5,39.7,52.6,75.5,57.4,60.4,47.6,39.1,46.8,51.1"
+
+							}]
+		};
+		//Temporary Json String
+		
+		*/			
+				
+				
+				
+		var xAxisData = tempJson.xAxis.categories.split(',');
+		var constructSeries = [];
+		for(var i=0; i < tempJson.series.length; i++){
+			var temp = tempJson.series[i].data.split(',');
+			var tempArr = [];
+			for(var j=0; j<temp.length; j++){
+				var xyz = parseInt(temp[j]);
+				tempArr.push(xyz);
+			}
+			var abc = {name: tempJson.series[i].name, data: tempArr, _colorIndex: i};
+			constructSeries.push(abc);
+		}
+		$scope.testseries = constructSeries;
+		var seriesData = {
+					chart: {type: tempJson.chart.type},
+					title: {text: tempJson.title.text},
+					subtitle: {text: tempJson.subtitle.text},
+					xAxis: {categories: xAxisData,crosshair: tempJson.xAxis.crosshair},
+					yAxis: {min: tempJson.yAxis.min,title: {text: tempJson.yAxis.title.text}},
+					tooltip: {headerFormat: tempJson.tooltip.headerFormat,pointFormat: tempJson.tooltip.pointFormat,
+						footerFormat: tempJson.tooltip.footerFormat,shared: tempJson.tooltip.shared,useHTML: tempJson.tooltip.useHTML},
+					plotOptions: {column: {pointPadding: tempJson.plotOptions.column.pointPadding,borderWidth: tempJson.plotOptions.column.borderWidth}},
+					series: constructSeries
+				};
+		$scope.series = seriesData;
+		
+		
+		$(function () {
+			$('#container').highcharts(seriesData);
+		});
