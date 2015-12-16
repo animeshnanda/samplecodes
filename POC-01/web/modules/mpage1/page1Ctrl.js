@@ -14,6 +14,8 @@ define([
             });
 	}])
 	.controller('page1Ctrl', ['$scope',function($scope) {
+		
+		$scope.global = {};
 	
 		$('#tabFAQ a').click(function(e) {
 			e.preventDefault();
