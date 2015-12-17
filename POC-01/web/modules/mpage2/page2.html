@@ -1,50 +1,13 @@
-<div class="accordion_container"> 
-	<div class="accordion_head">First Accordian Head<span class="plusminus">+</span> </div> 
-	<div class="accordion_body" style="display: none;"> 
-		<p>
-		  <ul class="">
-			<li id="" class="">        
-				<input type="checkbox">Privilege 1
-			</li>
-			<li id="" class="">
-				<input type="checkbox">Privilege 2
-			</li>
-			<li id="" class="">
-				<input type="checkbox">Privilege 3
-			</li>
-		  </ul>
-		</p> 
-	</div> 
-	<div class="accordion_head">Second Accordian Head<span class="plusminus">+</span> </div> 
-	<div class="accordion_body" style="display: none;">
-		<p>
-		  <ul class="">
-			<li id="" class="">        
-				<input type="checkbox">Privilege 1
-			</li>
-			<li id="" class="">
-				<input type="checkbox">Privilege 2
-			</li>
-			<li id="" class="">
-				<input type="checkbox">Privilege 3
-			</li>
-		  </ul>
-		</p> 
-	</div> 
-	<div class="accordion_head">Third Accordian Head<span class="plusminus">+</span> </div> 
-	<div class="accordion_body" style="display: none;">
-		<p>
-		  <ul class="">
-			<li id="" class="">        
-				<input type="checkbox">Privilege 1
-			</li>
-			<li id="" class="">
-				<input type="checkbox">Privilege 2
-			</li>
-			<li id="" class="">
-				<input type="checkbox">Privilege 3
-			</li>
-		  </ul>
-		</p> 
-	</div> 
-</div> 
+<div class="panel">
+	<div ng-repeat="employee in employees">
+		<div class="action-checkbox">
+			<input id="{{employee.name}}" type="checkbox" value="{{employee.name}}" ng-checked="selection.indexOf(employee.name) > -1" ng-click="toggleSelection(employee.name)" />
+			<label for="{{employee.name}}"></label>
+			{{employee.name}}
+		</div>
+	</div>
+	<span style="color:white;" class="selected-item">Selected Items:<span>
+	<div ng-repeat="name in selection" class="selected-item">
+		{{name}}
+	</div>
+</div>

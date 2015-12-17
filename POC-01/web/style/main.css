@@ -27,3 +27,14 @@
     padding: 5px;
 }
 .fa{margin-right: 5px;}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
