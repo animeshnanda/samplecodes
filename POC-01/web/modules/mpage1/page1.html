@@ -1,76 +1,21 @@
 <div class="accordion_container"> 
         <div class="accordion_container">
 		
-          <div class="accordion-group">
+          <div class="accordion-group" data-ng-repeat="x in testprivilege.rnp">
             <div class="accordion-heading clearfix">
-				<a class="accordion-toggle category pull-left" data-toggle="collapse" data-parent="#parent" href="#category1" ng-click="global.isOpen1 = !global.isOpen1">
-					<i class="fa fa-plus-square" ng-hide="global.isOpen1"></i>
-					<i class="fa fa-minus-square" ng-show="global.isOpen1"></i><b>Role 1</b>
+				<a class="accordion-toggle category pull-left" data-toggle="collapse" data-parent="#parent" ng-href="#category{{x.category}}" ng-click="global.isOpen{{x.category}} = !global.isOpen{{x.category}}">
+					<i class="fa fa-plus-square" ng-hide="global.isOpen{{x.category}}"></i>
+					<i class="fa fa-minus-square" ng-show="global.isOpen{{x.category}}"></i><b>{{x.role}}</b>
 				</a>
-				<div data-toggle="collapse" data-parent="#parent" href="#category1" class="head-height">&nbsp;</div>
+				<div data-toggle="collapse" data-parent="#parent" ng-href="#category{{x.category}}" class="head-height">&nbsp;</div>
             </div>
-            <div id="category1" class="accordion-body collapse">
+            <div id="category{{x.category}}" class="accordion-body collapse">
               <ul class="">
-                <li id="" class="">        
-                    <input type="checkbox">Privilege 1
-                </li>
-                <li id="" class="">
-                    <input type="checkbox">Privilege 2
-                </li>
-                <li id="" class="">
-                    <input type="checkbox">Privilege 3
+                <li id="" class="" data-ng-repeat="y in x.privileges">        
+                    <input type="checkbox" ng-checked="{{y.Selected}}">{{y.name}}
                 </li>
               </ul>
             </div>
           </div>
-		  
-          <div class="accordion-group">
-            <div class="accordion-heading clearfix">
-				<a class="accordion-toggle category pull-left" data-toggle="collapse" data-parent="#parent" href="#category2" ng-click="global.isOpen2 = !global.isOpen2">
-					<i class="fa fa-plus-square" ng-hide="global.isOpen2"></i>
-					<i class="fa fa-minus-square" ng-show="global.isOpen2"></i><b>Role 2</b>
-				</a>
-				<div data-toggle="collapse" data-parent="#parent" href="#category2" class="head-height">&nbsp;</div>
-            </div>
-            <div id="category2" class="accordion-body collapse">
-              <ul class="">
-                <li id="" class="">        
-                    <input type="checkbox">Privilege 1
-                </li>
-                <li id="" class="">
-                    <input type="checkbox">Privilege 2
-                </li>
-                <li id="" class="">
-                    <input type="checkbox">Privilege 3
-                </li>
-              </ul>
-            </div>
-          </div>
-		  
-          <div class="accordion-group">
-            <div class="accordion-heading clearfix">
-				<a class="accordion-toggle category pull-left" data-toggle="collapse" data-parent="#parent" href="#category3" ng-click="global.isOpen3 = !global.isOpen3">
-					<i class="fa fa-plus-square" ng-hide="global.isOpen3"></i>
-					<i class="fa fa-minus-square" ng-show="global.isOpen3"></i><b>Role 3</b>
-				</a>
-				<div data-toggle="collapse" data-parent="#parent" href="#category3" class="head-height">&nbsp;</div>
-            </div>
-            <div id="category3" class="accordion-body collapse">
-              <ul class="">
-                <li id="" class="">        
-                    <input type="checkbox">Privilege 1
-                </li>
-                <li id="" class="">
-                    <input type="checkbox">Privilege 2
-                </li>
-                <li id="" class="">
-                    <input type="checkbox">Privilege 3
-                </li>
-              </ul>
-            </div>
-          </div>
-
-
-
         </div>
 </div>

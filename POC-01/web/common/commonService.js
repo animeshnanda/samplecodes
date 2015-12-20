@@ -3,27 +3,17 @@ define([
 	'angular'
 ], function(angular) {
 	angular.module('commonService', [])
-	.service('chartService', function($http,$q) {
-		this.getChartSeriesData = function() {
+	.service('RolePrivilegeService', function($http,$q) {
+		this.getPrivilegeData = function() {
 			var strData;
-			//var promise=$http.get("http://localhost:5000/data/custom-chart-data.json")
-			var promise=$http.get("http://localhost:8080/greetings/abc")
+			var promise=$http.get("http://localhost:9099/data/sample.json")
 			.success(function (data) {
 				strData = data;
 			});
 			return promise;
 		};
 	})
-	.service('sparklineService', function($http,$q) {
-		this.getChartSeriesData = function() {
-			var strData;
-			var promise=$http.get("http://localhost:8080/data/custom-chart-sparkline.json")
-			.success(function (data) {
-				strData = data;
-			});
-			return promise;
-		};
-	})
+
 	.factory('myFactory', function($http,$q){
 	  return {
 			sayHello: function() {

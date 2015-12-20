@@ -1,0 +1,58 @@
+{
+  "rnp": [
+    {
+      "role":"role1",
+	  "category":1,
+      "privileges": [
+        {
+          "name": "privilege1",
+          "Selected": true
+        },
+        {
+          "name": "privilege2",
+          "Selected": false
+        },
+        {
+          "name": "privilege3",
+          "Selected": false
+        }
+      ]
+    },
+    {
+      "role":"role2",
+	  "category":2,
+      "privileges": [
+        {
+          "name": "privilege1",
+          "Selected": true
+        },
+        {
+          "name": "privilege2",
+          "Selected": false
+        },
+        {
+          "name": "privilege3",
+          "Selected": true
+        }
+      ]
+    },
+    {
+      "role":"role3",
+	  "category":3,
+      "privileges": [
+        {
+          "name": "privilege1",
+          "Selected": false
+        },
+        {
+          "name": "privilege2",
+          "Selected": false
+        },
+        {
+          "name": "privilege3",
+          "Selected": true
+        }
+      ]
+    }
+  ]
+}
